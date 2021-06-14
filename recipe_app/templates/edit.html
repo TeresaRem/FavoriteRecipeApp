@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <link rel="stylesheet" href="/static/style.css?{% now 'U' %}"/>
+    <title>Edit</title>
+</head>
+
+<body>
+    <h1>Edit Fave</h1>
+
+    <form action="//dashboard/{{id}}/edit" method="post">
+        {%  csrf_token %}
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" class="form-control" value="{{favorites.title}}">
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" name="category" id="category" class="form-control"value="{{favorites.category}}">
+        </div>
+        <div class="form-group">
+            <label for="instructions">Instruction</label>
+            <textarea name="instructions" id="instructions" cols="30" rows="10" class="form-control">{{favorite.instructions}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <textarea name="ingredients" id="ingredients" cols="30" rows="10" class="form-control">{{favorite.ingredients}}</textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+</body>
+</html>    
+        

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Homepage</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">Featured Meal</a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="add_to_fave">Add Your Favorite Meal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout">Log out</a>
+            </li>
+        </ul>
+    </nav>
+    
+    
+        
+    <div class="container text-center ">
+        
+        {% for i in meals %}
+        <h1>{{  i.strMeal  }}</h1>
+        <h5>Category: {{  i.strCategory }}</h5>
+        
+            <img class="center " src="{{  i.strMealThumb }}" alt="image" style="width:50%">
+            <h5 class="title">Video</h5>
+            <a href="{{i.strYoutube}}" >{{  i.strYoutube  }}</a>
+        {% endfor %}     
+            
+    </div>
+    
+</body>
+</html>    
+        
+            
+            
+                
+            
+    

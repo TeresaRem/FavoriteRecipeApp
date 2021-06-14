@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/style.css' %}"/>
+    <link rel="stylesheet" href="/static/style.css?{% now 'U' %}"/>
+    <title>dashboard</title>    
+    
+</head>
+
+<body>
+    
+            <div class="container my-5">
+                <div class='view-favorites'>
+                    <a class="nav-link" href="back">Back</a> 
+                    <h1 class = " text-muted text-center mt-4 ">Your Favorite Recipes</h1>
+                    {% for favorite in favorites %}
+                    <div class="container">
+                        <h5>Title:</h5>{{favorite.title}}
+                        <h5>Category:</h5>{{favorite.category}}
+                            <div class="card-body">
+                            <h5 class="card-body">Instructions</h5>
+                            <p>{{favorite.instructions}}</p>
+                            <h5 class="card-body">Ingredients</h5>
+                            <p>{{favorite.ingredients}}</p>
+                        
+                            {% if request.session.user_id == user_id%}
+                            <p>{{dashboard.poster.first_name}} {{dashboard.poster.last_name}}</p>
+                            </div>
+                            
+                            <a href="dashboard/{{favorite.id}}/delete" class="btn btn-primary">Delete</a>
+                    
+                            {% endif %}
+                            <hr>
+                        </div>
+                    {% endfor %}
+                    
+                </div>         
+            </div>            
+
+                    
+            
+            
+        
+    </nav>    
+    
+
+
+    
+    
+</body>
+</html>

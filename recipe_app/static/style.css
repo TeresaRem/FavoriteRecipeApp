@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(179, 174, 226);
+}
+form {
+    margin: 0 400px;
+    padding: 50px;
+    background-color: #cd88f1;
+    text-align: center;
+    font-family:cursive;
+    
+    
+}
+
+h5 {
+    color: blueviolet;
+}
+font {
+    color: #932aca;
+    
+}
+.container  {
+    text-align: center;
+    font-family:cursive!important;
+    
+}
+
+a {
+    color: rgb(33, 10, 240);
+
+}
+
+.card-body h5 {
+    font-family:fantasy!important;
+}
+
+h1 {
+    font-family:cursive !important;
+}
